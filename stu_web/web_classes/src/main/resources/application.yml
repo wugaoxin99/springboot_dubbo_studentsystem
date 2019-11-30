@@ -1,6 +1,6 @@
 dubbo:
   registry:
-    address: zookeeper://192.168.99.222:2181
+    address: zookeeper://192.168.88.188:2181
   protocol:
     port: -1
   application:
