@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="|/${url}?currentPage=1|">首页</a><br/>
+    <a th:if="${pageInfo.pageNum>1}" th:href="|/${url}?currentPage=${pageInfo.pageNum-1}|">上一页</a><br/>
+    <a th:if="${pageInfo.pageNum<pageInfo.total}" th:href="|/${url}?currentPage=${pageInfo.pageNum+1}|">下一页</a><br/>
+    <a th:href="|/${url}?currentPage=${pageInfo.total}|">尾页</a><br/>
+</body>
+</html>

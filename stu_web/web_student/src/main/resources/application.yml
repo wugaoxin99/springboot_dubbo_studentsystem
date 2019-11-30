@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: web-student
+  protocol:
+    port: -1
+  registry:
+    address: zookeeper://192.168.99.222:2181
+  consumer:
+    check: false
+spring:
+  datasource:
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///db_stu?serverTimezone=GMT%2B8

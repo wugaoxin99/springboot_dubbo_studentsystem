@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>班级列表</title>
+</head>
+<body>
+    <h2>班级列表</h2>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>班级编号</th>
+            <th>班级名</th>
+            <th>班级人数</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="classes : ${classesList}">
+            <td th:text="${classes.id}"></td>
+            <td th:text="${classes.cname}"></td>
+            <td th:text="${classes.cnum}"></td>
+            <td>
+                <a th:href="|/cls/toUpdate?id=${classes.id}|">修改</a>
+                <a th:href="|/cls/deleteById?id=${classes.id}|">删除</a>
+            </td>
+        </tr>
+    </table>
+<!--<div th:include="page2"></div>-->
+</body>
+</html>
