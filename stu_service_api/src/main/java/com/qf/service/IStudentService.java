@@ -1,9 +1,5 @@
 package com.qf.service;
 
-import com.qf.entity.Student;
-
-import java.util.List;
-
 public interface IStudentService {
-    List<Student> getList();
+    int getStuCountByCid(Integer cid);
 }
