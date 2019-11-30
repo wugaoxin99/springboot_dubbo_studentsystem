@@ -1,9 +1,9 @@
 package com.qf.service;
 
+import com.github.pagehelper.PageInfo;
 import com.qf.entity.Classes;
-
-import java.util.List;
+import com.qf.entity.MyPage;
 
 public interface IClassesService {
-    List<Classes> getList();
+    PageInfo<Classes> getPageList(MyPage page);
 }

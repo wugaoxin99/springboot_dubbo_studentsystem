@@ -6,14 +6,14 @@
 </head>
 <body>
     <h2>班级列表</h2>
-    <table border="1" cellspacing="0">
+    <table class="layui-table">
         <tr>
             <th>班级编号</th>
             <th>班级名</th>
             <th>班级人数</th>
             <th>操作</th>
         </tr>
-        <tr th:each="classes : ${classesList}">
+        <tr th:each="classes : ${pageInfo.list}">
             <td th:text="${classes.id}"></td>
             <td th:text="${classes.cname}"></td>
             <td th:text="${classes.cnum}"></td>
@@ -23,5 +23,7 @@
             </td>
         </tr>
     </table>
+<div th:include="page">
+</div>
 </body>
 </html>
