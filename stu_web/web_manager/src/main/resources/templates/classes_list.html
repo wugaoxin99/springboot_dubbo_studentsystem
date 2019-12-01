@@ -7,11 +7,11 @@
 <body>
     <h2>班级列表</h2>
     <table class="layui-table">
-        <tr>
-            <th>班级编号</th>
-            <th>班级名</th>
-            <th>班级人数</th>
-            <th>操作</th>
+        <tr style="text-align: center;">
+            <td>班级编号</td>
+            <td>班级名</td>
+            <td>班级人数</td>
+            <td>操作</td>
         </tr>
         <tr style="text-align: center;" th:each="classes : ${pageInfo.list}">
             <td th:text="${classes.id}"></td>
