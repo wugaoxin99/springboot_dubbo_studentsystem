@@ -13,14 +13,19 @@
             <th>班级人数</th>
             <th>操作</th>
         </tr>
-        <tr th:each="classes : ${pageInfo.list}">
+        <tr style="text-align: center;" th:each="classes : ${pageInfo.list}">
             <td th:text="${classes.id}"></td>
             <td th:text="${classes.cname}"></td>
             <td th:text="${classes.cnum}"></td>
             <td>
                 <a th:href="|/cls/toUpdate?id=${classes.id}|">修改</a>
-                <a th:href="|/cls/deleteById?id=${classes.id}|">删除</a>
+                <a th:href="|/cls/deleteById?id=${classes.id}|" >
+                    |删除
+                </a>
             </td>
+        </tr>
+        <tr>
+            <td colspan="4"><a href="/cls/toAdd">添加</a></td>
         </tr>
     </table>
 <div th:include="page">

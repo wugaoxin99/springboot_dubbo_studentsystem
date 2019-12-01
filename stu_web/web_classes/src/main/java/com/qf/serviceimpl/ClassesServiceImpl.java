@@ -29,4 +29,24 @@ public class ClassesServiceImpl implements IClassesService {
         }
         return new PageInfo<>(classesList);
     }
+
+    @Override
+    public Classes getClassById(Integer id) {
+        return classesMapper.selectById(id);
+    }
+
+    @Override
+    public void updateClass(Classes classes) {
+        classesMapper.updateById(classes);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        classesMapper.deleteById(id);
+    }
+
+    @Override
+    public void add(Classes classes) {
+        classesMapper.insert(classes);
+    }
 }

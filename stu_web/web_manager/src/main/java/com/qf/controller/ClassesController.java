@@ -7,6 +7,7 @@ import com.qf.entity.MyPage;
 import com.qf.service.IClassesService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -20,4 +21,30 @@ public class ClassesController {
         model.addAttribute("pageInfo",pageInfo);
         return "classes_list";
     }
+    @RequestMapping("/toUpdate")
+    public String toUpdate(Integer id, ModelMap map){
+        Classes classes=classesService.getClassById(id);
+        map.put("classes",classes);
+        return "class_update";
+    }
+    @RequestMapping("/update")
+    public String update(Classes classes){
+        classesService.updateClass(classes);
+        return "redirect:/cls/list";
+    }
+    @RequestMapping("/deleteById")
+    public String deleteById(Integer id){
+        classesService.deleteById(id);
+        return "redirect:/cls/list";
+    }
+    @RequestMapping("/toAdd")
+    public String toAdd(){
+        return "cls_add";
+    }
+    @RequestMapping("/add")
+    public String add(Classes classes){
+        classesService.add(classes);
+        return "redirect:/cls/list";
+    }
+
 }
