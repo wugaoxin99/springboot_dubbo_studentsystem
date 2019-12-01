@@ -19,6 +19,7 @@ public class ClassesController {
     public String list(Model model, MyPage page){
         PageInfo<Classes> pageInfo = classesService.getPageList(page);
         model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("url","/cls/list");
         return "classes_list";
     }
     @RequestMapping("/toUpdate")
